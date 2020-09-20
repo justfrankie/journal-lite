@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: 'Cabin Condensed', sans-serif;
+    color: grey;
+    background: white;
+}
+
+#heading_title {
+    margin-right: auto;
+    font-size: 2em;
+    margin-left: 50px;
+}
+
+#heading_title:hover {
+    cursor: pointer;
+    color: rgb(93, 42, 42);
+}
+
+.heading_nav {
+    margin-right: 40px;
+    font-size: 1.5em;
+}
+
+.heading_nav:hover {
+    cursor: pointer;
+    color: rgb(93, 42, 42);
+}
+
+.nav_container {
+    margin-right: 2%;
+    display: flex;
+}
+
+.heading {
+    width: 100%;
+    background-color: rgb(206 66 98);
+    color: white;
+    display: flex;
+    padding: 2px 0;
+}
+
+.entryContainer {
+    width: 80%;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+.entries {
+    border: 1px solid rgb(218 218 218);
+    padding: 10px 0;
+    margin-top:20px;
+    border-radius: 5px;
+}
+
+.entries:hover {
+    cursor: pointer;
+    border: 1px solid rgb(206 66 98);
+}
+.entryTitle {
+    color: rgb(46, 46, 46);
+    font-weight: 700;
+}
+
+.entryTime {
+    color: rgb(124, 124, 124);
+    font-weight: 600;
+}
+
+.entryBody {
+    width: 90%;
+    margin: auto;
+}
+
+.footer {
+    background-color: rgb(206 66 98);
+    text-align: center;
+    height: 50px;
+    color: white;
+    margin-top: 30px;
+}
+
+.createContainer {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+}
+
+#textArea {
+    width: 500px;
+    height: 200px;
+}

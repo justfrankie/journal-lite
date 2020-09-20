@@ -1457,17 +1457,21 @@ var App = function (_React$Component) {
     }, {
         key: 'togglePage',
         value: function togglePage(page) {
+            var _this3 = this;
+
             this.setState({
                 page: page
+            }, function () {
+                return _this3.getPosts();
             });
         }
     }, {
         key: 'getOnePost',
         value: function getOnePost(id) {
-            var _this3 = this;
+            var _this4 = this;
 
             _axios2.default.get('/paul/' + id).then(function (data) {
-                _this3.setState({
+                _this4.setState({
                     posts: data.data
                 });
             }).catch(function (err) {
@@ -1477,7 +1481,7 @@ var App = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _this4 = this;
+            var _this5 = this;
 
             if (this.state.page === "create") {
                 return _react2.default.createElement(_Create2.default, { togglePage: this.togglePage, getPosts: this.getPosts });
@@ -1491,7 +1495,7 @@ var App = function (_React$Component) {
                         _react2.default.createElement(
                             'span',
                             { id: 'heading_title', onClick: function onClick() {
-                                    return _this4.togglePage("home");
+                                    return _this5.togglePage("home");
                                 } },
                             'Journal-lite'
                         ),
@@ -1501,14 +1505,14 @@ var App = function (_React$Component) {
                             _react2.default.createElement(
                                 'div',
                                 { className: 'heading_nav', onClick: function onClick() {
-                                        return _this4.togglePage("home");
+                                        return _this5.togglePage("home");
                                     } },
                                 'All entries'
                             ),
                             _react2.default.createElement(
                                 'div',
                                 { className: 'heading_nav', onClick: function onClick() {
-                                        return _this4.togglePage("create");
+                                        return _this5.togglePage("create");
                                     } },
                                 'Write a new Entry'
                             )
@@ -2426,16 +2430,12 @@ var Create = function (_React$Component) {
     _createClass(Create, [{
         key: 'handleChange',
         value: function handleChange(e) {
-            var _this2 = this;
-
-            this.setState(_defineProperty({}, e.target.name, e.target.value), function () {
-                return console.log(_this2.state);
-            });
+            this.setState(_defineProperty({}, e.target.name, e.target.value));
         }
     }, {
         key: 'handleSubmit',
         value: function handleSubmit(e) {
-            var _this3 = this;
+            var _this2 = this;
 
             e.preventDefault();
             var _state = this.state,
@@ -2448,8 +2448,8 @@ var Create = function (_React$Component) {
                 date: date,
                 body: body
             }).then(function () {
-                _this3.props.getPosts();
-                _this3.props.togglePage("home");
+                _this2.props.getPosts();
+                _this2.props.togglePage("home");
             }).catch(function (err) {
                 return console.error(err);
             });
@@ -2457,7 +2457,7 @@ var Create = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _this4 = this;
+            var _this3 = this;
 
             return _react2.default.createElement(
                 'div',
@@ -2468,7 +2468,7 @@ var Create = function (_React$Component) {
                     _react2.default.createElement(
                         'span',
                         { id: 'heading_title', onClick: function onClick() {
-                                return _this4.props.togglePage("home");
+                                return _this3.props.togglePage("home");
                             } },
                         'Journal-lite'
                     ),
@@ -2478,14 +2478,14 @@ var Create = function (_React$Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'heading_nav', onClick: function onClick() {
-                                    return _this4.props.togglePage("home");
+                                    return _this3.props.togglePage("home");
                                 } },
                             'All entries'
                         ),
                         _react2.default.createElement(
                             'div',
                             { className: 'heading_nav', onClick: function onClick() {
-                                    return _this4.props.togglePage("create");
+                                    return _this3.props.togglePage("create");
                                 } },
                             'Write a new Entry'
                         )

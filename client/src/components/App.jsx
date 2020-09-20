@@ -33,7 +33,7 @@ export default class App extends React.Component {
   togglePage(page){
     this.setState({
         page: page
-    })
+    }, () => this.getPosts())
   }
 
 

@@ -26,7 +26,7 @@ app.get('/all', (req, res) => {
   })
 })
 
-app.post('/alvin', (req, res) => {
+app.post('/post', (req, res) => {
     db.postEntry( req.body ,(err, results) => { 
       if (err) {
         res.status(404).send(err)
@@ -36,7 +36,7 @@ app.post('/alvin', (req, res) => {
     })
   })
 
-  app.put('/alvin/:id', (req, res) => {
+  app.put('/update/:id', (req, res) => {
     db.updateOne( req.params.id , req.body ,(err, results) => { 
       if (err) {
         res.status(404).send(err)
@@ -46,7 +46,7 @@ app.post('/alvin', (req, res) => {
     })
   })
 
-  app.get('/paul/:id', (req, res) => {
+  app.get('/get/:id', (req, res) => {
     db.getOne( req.params.id ,(err, results) => { 
       if (err) {
         res.status(404).send(err)

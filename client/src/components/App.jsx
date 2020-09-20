@@ -33,12 +33,12 @@ export default class App extends React.Component {
   togglePage(page){
     this.setState({
         page: page
-    }, () => this.getPosts())
+    }, () => this.getPosts()) // gets all posts when clicked on any other tab
   }
 
 
   getOnePost(id){
-    axios.get(`/paul/${id}`)
+    axios.get(`/get/${id}`)
     .then((data)=> {
         this.setState({
             posts: data.data  

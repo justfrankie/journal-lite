@@ -1463,14 +1463,14 @@ var App = function (_React$Component) {
                 page: page
             }, function () {
                 return _this3.getPosts();
-            });
+            }); // gets all posts when clicked on any other tab
         }
     }, {
         key: 'getOnePost',
         value: function getOnePost(id) {
             var _this4 = this;
 
-            _axios2.default.get('/paul/' + id).then(function (data) {
+            _axios2.default.get('/get/' + id).then(function (data) {
                 _this4.setState({
                     posts: data.data
                 });
@@ -2443,7 +2443,7 @@ var Create = function (_React$Component) {
                 date = _state.date,
                 body = _state.body;
 
-            _axios2.default.post('/alvin', {
+            _axios2.default.post('/post', {
                 title: title,
                 date: date,
                 body: body

@@ -22,7 +22,7 @@ export default class Create extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         let {title, date, body} = this.state
-        axios.post('/alvin', {
+        axios.post('/post', {
             title: title,
             date: date,
             body: body

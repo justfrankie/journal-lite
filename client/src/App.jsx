@@ -1,8 +1,7 @@
-import React from 'react';
-import Post from './Post.jsx';
-import Create from './Create.jsx';
+import { React, useState } from 'react';
+import Post from 'components/Post.jsx';
+import Create from 'components/Create.jsx';
 import axios from 'axios';
-
 
 export default class App extends React.Component {
   constructor(props) {
@@ -31,9 +30,10 @@ export default class App extends React.Component {
   }
 
   togglePage(page){
+     // gets all posts when clicked on any other tab
     this.setState({
         page: page
-    }, () => this.getPosts()) // gets all posts when clicked on any other tab
+    }, () => this.getPosts())
   }
 
 

@@ -1,6 +1,6 @@
-import { React, useState } from 'react';
-import Post from 'components/Post.jsx';
-import Create from 'components/Create.jsx';
+import React from 'react';
+import Post from './components/Post.jsx';
+import Create from './components/Create.jsx';
 import axios from 'axios';
 
 export default class App extends React.Component {

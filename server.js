@@ -31,7 +31,7 @@ app.post("/post", (req, res) => {
     if (err) {
       res.status(404).send(err);
     } else {
-      res.status(200).send("alvin has posted!!!!!!!!!");
+      res.status(200).send("Successfully posted Journal!");
     }
   });
 });
@@ -41,7 +41,7 @@ app.put("/update/:id", (req, res) => {
     if (err) {
       res.status(404).send(err);
     } else {
-      res.status(200).send("alvin has updated!!!!!!");
+      res.status(200).send("Successfully updated journal!");
     }
   });
 });
@@ -56,6 +56,10 @@ app.get("/get/:id", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  `LISTENING ON PORT ${PORT}`;
+app.listen(PORT, (err) => {
+  if (err) {
+    console.log("Error in server setup");
+  } else {
+    `LISTENING ON PORT ${PORT}`;
+  }
 });

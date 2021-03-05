@@ -1,5 +1,6 @@
 import React from "react";
 import AllPosts from "./components/AllPosts/index.jsx";
+import SideNav from "./components/SideNav/index.jsx";
 import CreatePage from "./components/CreatePage/index.jsx";
 import axios from "axios";
 
@@ -79,12 +80,11 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
           <div className="entryContainer">
+            <div className="entriesContainer_padding">
+            <SideNav posts={this.state.posts} getOnePost={this.getOnePost} />
             <AllPosts posts={this.state.posts} getOnePost={this.getOnePost} />
+            </div>
           </div>
         </div>
       );

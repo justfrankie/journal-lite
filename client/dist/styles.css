@@ -40,19 +40,43 @@ body {
 }
 
 .entryContainer {
-  width: 80%;
+  width: 95%;
   text-align: center;
-  display: block;
-  margin: auto;
-}
-.entries {
-  border: 1px solid rgb(218 218 218);
-  padding: 10px 0;
-  margin-top: 20px;
-  border-radius: 5px;
+  display: flex;
+  margin: 2rem auto;
 }
 
-.entries:hover {
+.entriesContainer_padding {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+}
+.sideNavEntriesContainer {
+  width: 20%;
+  border: 1px solid #ce4262;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+.sideEntriesWrapper{
+}
+.sideEntries {
+padding: 0.5rem;
+}
+.mainEntriesContainer {
+  margin: 0 auto;
+}
+.mainEntries {
+  border: 1px solid #ce4262;
+  border-radius: 3px;
+  width: 90%;
+  margin: 0 auto 0.7rem auto;
+}
+
+.entriesPadding {
+  padding: 0.5rem 2rem;
+}
+
+.mainEntries:hover {
   cursor: pointer;
   border: 1px solid rgb(206 66 98);
   background-color: #fbfbfb;

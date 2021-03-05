@@ -1,22 +1,28 @@
-import React from 'react';
+import React from "react";
 
-function AllPosts({getOnePost, posts}) {
- {
+function AllPosts({ getOnePost, posts }) {
+  {
     return (
-      <div>
+      <div className="mainEntriesContainer">
         {posts.map((post, index) => {
-          const {id, title, date, body} = post
+          const { id, title, date, body } = post;
           return (
-            <div className="entries" key={index} onClick={() => getOnePost(id)}>
-              <div className="entryTitle">{title}</div>
-              <div className="entryTime">{date}</div>
-              <div className="entryBody">{body}</div>
-            </div>
+            <ul
+              className="mainEntries"
+              key={index}
+              onClick={() => getOnePost(id)}
+            >
+              <div className="entriesPadding">
+                <div className="entryTitle">{title}</div>
+                <div className="entryTime">{date}</div>
+                <div className="entryBody">{body}</div>
+              </div>
+            </ul>
           );
         })}
       </div>
     );
-}
+  }
 }
 
 export default AllPosts;

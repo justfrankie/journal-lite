@@ -1,9 +1,9 @@
 import React from 'react';
-import Post from './components/Post.jsx';
-import Create from './components/Create.jsx';
+import AllPosts from './components/AllPosts/AllPosts.jsx';
+import CreatePage from './components/CreatePage/CreatePage.jsx';
 import axios from 'axios';
 
-export default class App extends React.Component {
+ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,7 +50,7 @@ export default class App extends React.Component {
   render() {
       if (this.state.page === "create") {
         return (
-           <Create togglePage={this.togglePage} getPosts={this.getPosts}/>
+           <CreatePage togglePage={this.togglePage} getPosts={this.getPosts}/>
         )
       } else if (this.state.page === "home"){
             return (
@@ -69,7 +69,7 @@ export default class App extends React.Component {
                 <br></br>
                 <div className="entryContainer">
                     
-                    <Post posts={this.state.posts} getPosts={this.getPosts} getOnePost={this.getOnePost}/>
+                    <AllPosts posts={this.state.posts} getOnePost={this.getOnePost}/>
                 
                 </div>
                 </div>
@@ -77,3 +77,5 @@ export default class App extends React.Component {
     }
   }
 }
+
+export default App;

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-export default class Create extends React.Component {
+ class CreatePage extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -16,7 +16,7 @@ export default class Create extends React.Component {
     handleChange(e){
         this.setState({
             [e.target.name]: e.target.value
-        })
+        }, () => console.log(this.state))
     }
 
     handleSubmit(e){
@@ -76,3 +76,6 @@ export default class Create extends React.Component {
       )
     }
   }
+
+
+  export default CreatePage;
